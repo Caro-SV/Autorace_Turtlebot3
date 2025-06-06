@@ -8,7 +8,7 @@ from geometry_msgs.msg import Twist
 
 class Camara(Node):
     def __init__(self):
-        super().__init__('Autorace')
+        super().__init__('autorace_turtlebot')
         # Inicializar variables y configuraciones iniciales
         self.imagen = []  # Variable para almacenar la imagen recibida
         self.puente = CvBridge()  # Puente entre ROS y OpenCV
