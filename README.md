@@ -5,13 +5,15 @@
 </p>
 
 <h2>Descripción</h2>
-<p>El nodo <code>LaneDetectionNode</code> procesa imágenes capturadas por una cámara montada en un robot móvil. Detecta carriles para seguir el camino y líneas rojas que indican alto.</p>
+<p>El nodo <code>autorace_turtlebot</code> procesa imágenes capturadas por una cámara montada en un robot móvil. Detecta carriles para seguir el camino y líneas rojas que indican alto.</p>
 
 <p>Este nodo usa OpenCV para filtrar colores y ROS2 para publicar comandos de movimiento en base a la detección.</p>
 <p>En la imagen se muestra la pista de pruebas con la que se simula este nodo.</p>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fd40699b-a204-4df4-9024-701d6c06271a" alt="Image">
 </p>
+<p><strong>Nota:</strong> El nodo puede ejecutarse en cualquier pista simulada de ROS2 y gazebo debido a sus caracteristicas.</p>
+
 <h2>Funcionamiento General</h2>
 
 <p>El nodo realiza lo siguiente:</p>
@@ -28,25 +30,28 @@
   <li>Si no detecta líneas: <strong>Se detiene</strong> por seguridad.</li>
 </ul>
 
-<h2>Ejecución</h2>
+<h2>Instrucciones de Ejecución</h2>
+<p>Agregar el nodo al archivo setup.py, cambiando el Nombre_paquete por el nombre de su paquete</p> 
+<pre style="background-color:#e6ffed;padding:10px;border-radius:8px;">
+<code>entry_points={
+        'console_scripts': [
+            'autorace_turtlebot = Nombre_paquete.autorace_turtlebot:main'
+        ],
+    },
+</code></pre>
+<p>Ejecuta los siguientes comandos desde una terminal de Ubuntu con ek entorno ROS2 configurado:</p>
+<p>1. Inicializar ROS2</p>
+<pre style="background-color:#e6ffed;padding:10px;border-radius:8px;">
+<code>cd ~/ros2_ws
+colcon build
+source install/setup.bash
+</code></pre>
 
-<p><strong>1. Instalar la dependencia necesaria:</strong></p>
+<p>2. Abrir Gazebo con la pista autorace</p>
 
-<pre style="background-color:#e8f5e9;padding:10px;border-radius:5px"><code>pip install opencv-python</code></pre>
-
-<p><strong>2. Asegurarse que la simulación tenga una cámara activa en el tópico <code>/camera/image_raw</code>.</strong></p>
-
-<p><strong>3. Compilar el paquete:</strong></p>
-
-<pre style="background-color:#e8f5e9;padding:10px;border-radius:5px"><code>colcon build --packages-select &lt;nombre_paquete&gt;</code></pre>
-
-<p><strong>4. Fuente el entorno:</strong></p>
-
-<pre style="background-color:#e8f5e9;padding:10px;border-radius:5px"><code>source install/setup.bash</code></pre>
-
-<p><strong>5. Ejecuta el nodo:</strong></p>
-
-<pre style="background-color:#e8f5e9;padding:10px;border-radius:5px"><code>ros2 run &lt;nombre_paquete&gt; vision_lane_detection_node</code></pre>
+<p>3. En otra terminal, ejecutar el nodo</p>
+<pre style="background-color:#e6ffed;padding:10px;border-radius:8px;">
+<code>ros2 run <NOMBRE_DEL_PAQUETE> autorace_turtlebot</code></pre>
 
 <h2>Resultados</h2>
 <p>Durante la ejecución se imprime en consola la velocidad lineal del robot, lo que permite observar como esta aumenta o disminuye conforme este se acerca a un curva como se ve en la imagen.</p>
@@ -57,6 +62,11 @@
 <p>Al tiempo se proyecta en una ventana la vision por computadora del robot donde se detalla la linea azul que identifica el centro del carril y las lineas delimitadoras del carril.</p>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1ded62cf-f172-4afd-aef9-7ff4ea79798f" alt="Image">
+</p>
+
+<p>Finalmete un ejemplo del funcionamiento.</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1a860bb9-a803-44a2-b5bf-6f1714ff0252" alt="Image">
 </p>
 
 <h2>Estructura del Nodo</h2>
