@@ -8,7 +8,10 @@
 <p>El nodo <code>LaneDetectionNode</code> procesa imágenes capturadas por una cámara montada en un robot móvil. Detecta carriles para seguir el camino y líneas rojas que indican alto.</p>
 
 <p>Este nodo usa OpenCV para filtrar colores y ROS2 para publicar comandos de movimiento en base a la detección.</p>
-
+<p>En la imagen se muestra la pista de pruebas con la que se simula este nodo.</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fd40699b-a204-4df4-9024-701d6c06271a" alt="Image">
+</p>
 <h2>Funcionamiento General</h2>
 
 <p>El nodo realiza lo siguiente:</p>
@@ -46,16 +49,20 @@
 <pre style="background-color:#e8f5e9;padding:10px;border-radius:5px"><code>ros2 run &lt;nombre_paquete&gt; vision_lane_detection_node</code></pre>
 
 <h2>Resultados</h2>
-<p>Durante la ejecución se imprime en consola la detección de línea roja y el centro del carril blanco detectado. El robot se detiene al detectar rojo y sigue la línea blanca cuando está disponible.</p>
+<p>Durante la ejecución se imprime en consola la velocidad lineal del robot, lo que permite observar como esta aumenta o disminuye conforme este se acerca a un curva como se ve en la imagen.</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d62b9711-ddc9-4415-934a-69d80fde2bdb" alt="Image">
+</p>
+
+<p>Al tiempo se proyecta en una ventana la vision por computadora del robot donde se detalla la linea azul que identifica el centro del carril y las lineas delimitadoras del carril.</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1ded62cf-f172-4afd-aef9-7ff4ea79798f" alt="Image">
+</p>
 
 <h2>Estructura del Nodo</h2>
 <ul>
-  <li><code>image_callback</code>: Recibe las imágenes y procesa los colores para obtener máscaras.</li>
-  <li><code>cv_bridge</code>: Convierte los datos de ROS a formato OpenCV.</li>
-  <li><code>control de movimiento</code>: Calcula el error del centroide blanco respecto al centro de la imagen y ajusta la dirección.</li>
-  <li><code>detección de línea roja</code>: Si encuentra una máscara roja válida, el robot se detiene.</li>
+  <li><code>Image_callback</code>: Recibe las imágenes y procesa los colores para obtener máscaras.</li>
+  <li><code>Cv_bridge</code>: Convierte los datos de ROS a formato OpenCV.</li>
+  <li><code>Control de movimiento</code>: Calcula el error del centroide blanco respecto al centro de la imagen y ajusta la dirección.</li>
+  <li><code>Detección de línea roja</code>: Si encuentra una máscara roja válida, el robot se detiene.</li>
 </ul>
-
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/ROS_logo.svg/512px-ROS_logo.svg.png" alt="ROS2 y OpenCV" width="150"/>
-</p>
