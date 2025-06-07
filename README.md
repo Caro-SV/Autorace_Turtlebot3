@@ -31,15 +31,22 @@
 </ul>
 
 <h2>Instrucciones de Ejecución</h2>
-<p>Agregar el nodo al archivo setup.py, cambiando el Nombre_paquete por el nombre de su paquete</p> 
+<p>Agregar los nodos al archivo setup.py, cambiando el Nombre_paquete por el nombre de su paquete</p> 
 <pre style="background-color:#e6ffed;padding:10px;border-radius:8px;">
 <code>entry_points={
         'console_scripts': [
-            'autorace_turtlebot = Nombre_paquete.autorace_turtlebot:main'
+            'autorace_turtlebot = Nombre_paquete.autorace_turtlebot:main',
+            'perpective_calibrator = Nombre_paquete.perpective_calibrator:main',
         ],
     },
 </code></pre>
-<p>Ejecuta los siguientes comandos desde una terminal de Ubuntu con ek entorno ROS2 configurado:</p>
+<p>Antes de correr el nodo principal se debe correr el nodo <code>perpective_calibrator.py</code> para ajustar la perspectiva de la cámara del robot seleccionando 4 puntos de la camara para la trasnformación como se ve en la imagen.</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a262f33b-dda5-4f06-bc2f-07521bf875cf" alt="Image">
+</p>
+
+<h3>Pasos para iniciar Autorace</h3>
+<p>Ejecuta los siguientes comandos desde una terminal de Ubuntu con el entorno ROS2 configurado:</p>
 <p>1. Inicializar ROS2</p>
 <pre style="background-color:#e6ffed;padding:10px;border-radius:8px;">
 <code>cd ~/ros2_ws
