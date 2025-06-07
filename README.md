@@ -40,9 +40,9 @@
         ],
     },
 </code></pre>
-<p>Antes de correr el nodo principal se debe correr el nodo <code>perpective_calibrator.py</code> para ajustar la perspectiva de la cámara del robot seleccionando 4 puntos de la camara para la trasnformación como se ve en la imagen.</p>
+<p>Antes de correr el nodo principal se debe correr el nodo <code>perpective_calibrator.py</code> para ajustar la perspectiva de la cámara del robot seleccionando 4 puntos para la trasnformación, como se ve en la imagen.</p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a262f33b-dda5-4f06-bc2f-07521bf875cf" alt="Image">
+  <img src="https://github.com/user-attachments/assets/330fc088-f07d-4ba6-8737-674b537d0d6e" alt="Image">
 </p>
 
 <h3>Pasos para iniciar Autorace</h3>
