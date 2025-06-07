@@ -44,6 +44,21 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/330fc088-f07d-4ba6-8737-674b537d0d6e" alt="Image">
 </p>
+<p>Una vez terminado de seleccionar los puntos, el nodo generará un archivo .txt donde estarán las coordenadas que se deben colocar en esta sección del nodo <code>autorace_turtlebot</code></p>
+<pre style="background-color:#e6ffed;padding:10px;border-radius:8px;">
+<code>origen = np.float32([
+            [107.0,3.0],    # Punto superior izquierdo
+            [588.0,1.0],   # Punto superior derecho
+            [717.0,367.0],  # Punto inferior derecho
+            [1.0,377.0]      # Punto inferior izquierdo
+        ])
+        destino = np.float32([
+            [0.0, 0.0],        # Nuevo punto superior izquierdo
+            [720.0,0.0],     # Nuevo punto superior derecho
+            [720.0,480.0],  # Nuevo punto inferior derecho
+            [0.0,480.0]      # Nuevo punto inferior izquierdo
+        ])
+</code></pre>
 
 <h3>Pasos para iniciar Autorace</h3>
 <p>Ejecuta los siguientes comandos desde una terminal de Ubuntu con el entorno ROS2 configurado:</p>
