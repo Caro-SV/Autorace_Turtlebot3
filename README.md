@@ -52,7 +52,7 @@
             [717.0,367.0],  # Punto inferior derecho
             [1.0,377.0]      # Punto inferior izquierdo
         ])
-        destino = np.float32([
+destino = np.float32([
             [0.0, 0.0],        # Nuevo punto superior izquierdo
             [720.0,0.0],     # Nuevo punto superior derecho
             [720.0,480.0],  # Nuevo punto inferior derecho
