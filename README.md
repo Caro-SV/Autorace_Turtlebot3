@@ -26,7 +26,7 @@
 <p>Comportamiento del robot:</p>
 <ul>
   <li>Si detecta una línea roja: <strong>Se detiene</strong>.</li>
-  <li>Detecta las líneas blanca y amarilla para determinar el centro del carril: <strong>Sigue el carril</strong> ajustando la dirección.</li>
+  <li>Detecta las líneas blanca y amarilla para determinar el centro del carril: <strong>Sigue el carril</strong> ajustando la velocidad lineal y angular por medio de control PID.</li>
   <li>Si no detecta líneas: <strong>Se detiene</strong> por seguridad.</li>
 </ul>
 
