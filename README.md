@@ -27,6 +27,7 @@
 <ul>
   <li>Si detecta una línea roja: <strong>Se detiene</strong>.</li>
   <li>Detecta las líneas blanca y amarilla para determinar el centro del carril: <strong>Sigue el carril</strong> ajustando la velocidad lineal y angular por medio de control PID.</li>
+  <li>Calcula el radio de los carriles: <strong> Detecta curvas cerradas y tramos rectos</strong> Aumenta o disminuye la velocidad lineal dependiendo de la trayectoria.</li>
   <li>Si no detecta líneas: <strong>Se detiene</strong> por seguridad.</li>
 </ul>
 
