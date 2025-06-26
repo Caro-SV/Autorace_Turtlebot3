@@ -19,14 +19,14 @@
 <p>El nodo realiza lo siguiente:</p>
 <ul>
   <li>Se suscribe a <code>/camera/image_raw</code> para recibir imágenes en tiempo real.</li>
-  <li>Convierte las imágenes al espacio HSV y crea máscaras para líneas blancas y rojas.</li>
+  <li>Convierte las imágenes al espacio HSV y crea máscaras para líneas amarillas, blancas y rojas.</li>
   <li>Calcula centroides de las áreas detectadas y genera comandos de movimiento en <code>/cmd_vel</code>.</li>
 </ul>
 
 <p>Comportamiento del robot:</p>
 <ul>
   <li>Si detecta una línea roja: <strong>Se detiene</strong>.</li>
-  <li>Si detecta una línea blanca: <strong>Sigue el carril</strong> ajustando la dirección.</li>
+  <li>Detecta las líneas blanca y amarilla para determinar el centro del carril: <strong>Sigue el carril</strong> ajustando la dirección.</li>
   <li>Si no detecta líneas: <strong>Se detiene</strong> por seguridad.</li>
 </ul>
 
